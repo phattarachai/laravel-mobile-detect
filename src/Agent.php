@@ -49,7 +49,7 @@ class Agent extends Mobile_Detect
         'IE' => 'MSIE|IEMobile|MSIEMobile|Trident/[.0-9]+',
         'Netscape' => 'Netscape',
         'Mozilla' => 'Mozilla',
-        'WeChat'  => 'MicroMessenger',
+        'WeChat' => 'MicroMessenger',
     ];
 
     /**
@@ -198,8 +198,8 @@ class Agent extends Mobile_Detect
 
     /**
      * Match a detection rule and return the matched key.
-     * @param  array $rules
-     * @param  string|null $userAgent
+     * @param array $rules
+     * @param string|null $userAgent
      * @return string|bool
      */
     protected function findDetectionRulesAgainstUA(array $rules, $userAgent = null)
@@ -221,7 +221,7 @@ class Agent extends Mobile_Detect
 
     /**
      * Get the browser name.
-     * @param  string|null $userAgent
+     * @param string|null $userAgent
      * @return string|bool
      */
     public function browser($userAgent = null)
@@ -231,7 +231,7 @@ class Agent extends Mobile_Detect
 
     /**
      * Get the platform name.
-     * @param  string|null $userAgent
+     * @param string|null $userAgent
      * @return string|bool
      */
     public function platform($userAgent = null)
@@ -241,7 +241,7 @@ class Agent extends Mobile_Detect
 
     /**
      * Get the device name.
-     * @param  string|null $userAgent
+     * @param string|null $userAgent
      * @return string|bool
      */
     public function device($userAgent = null)
@@ -258,8 +258,8 @@ class Agent extends Mobile_Detect
 
     /**
      * Check if the device is a desktop computer.
-     * @param  string|null $userAgent deprecated
-     * @param  array $httpHeaders deprecated
+     * @param string|null $userAgent deprecated
+     * @param array $httpHeaders deprecated
      * @return bool
      */
     public function isDesktop($userAgent = null, $httpHeaders = null)
@@ -267,7 +267,7 @@ class Agent extends Mobile_Detect
         // Check specifically for cloudfront headers if the useragent === 'Amazon CloudFront'
         if ($this->getUserAgent() === 'Amazon CloudFront') {
             $cfHeaders = $this->getCfHeaders();
-            if(array_key_exists('HTTP_CLOUDFRONT_IS_DESKTOP_VIEWER', $cfHeaders)) {
+            if (array_key_exists('HTTP_CLOUDFRONT_IS_DESKTOP_VIEWER', $cfHeaders)) {
                 return $cfHeaders['HTTP_CLOUDFRONT_IS_DESKTOP_VIEWER'] === 'true';
             }
         }
@@ -277,8 +277,8 @@ class Agent extends Mobile_Detect
 
     /**
      * Check if the device is a mobile phone.
-     * @param  string|null $userAgent deprecated
-     * @param  array $httpHeaders deprecated
+     * @param string|null $userAgent deprecated
+     * @param array $httpHeaders deprecated
      * @return bool
      */
     public function isPhone($userAgent = null, $httpHeaders = null)
@@ -288,7 +288,7 @@ class Agent extends Mobile_Detect
 
     /**
      * Get the robot name.
-     * @param  string|null $userAgent
+     * @param string|null $userAgent
      * @return string|bool
      */
     public function robot($userAgent = null)
@@ -302,7 +302,7 @@ class Agent extends Mobile_Detect
 
     /**
      * Check if device is a robot.
-     * @param  string|null $userAgent
+     * @param string|null $userAgent
      * @return bool
      */
     public function isRobot($userAgent = null)
@@ -349,7 +349,7 @@ class Agent extends Mobile_Detect
 
             // Prepare the pattern to be matched.
             // Make sure we always deal with an array (string is converted).
-            $properties[$propertyName] = (array) $properties[$propertyName];
+            $properties[$propertyName] = (array)$properties[$propertyName];
 
             foreach ($properties[$propertyName] as $propertyMatchString) {
                 if (is_array($propertyMatchString)) {
@@ -396,9 +396,6 @@ class Agent extends Mobile_Detect
         return $merged;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function __call($name, $arguments)
     {
         // Make sure the name starts with 'is', otherwise

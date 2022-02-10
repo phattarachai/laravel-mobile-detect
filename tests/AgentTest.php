@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 class AgentTest extends TestCase
 {
-    private $operatingSystems = [
+    private array $operatingSystems = [
         'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko' => 'Windows',
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13+ (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2' => 'OS X',
         'Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko ) Version/5.1 Mobile/9B176 Safari/7534.48.3' => 'iOS',
@@ -16,7 +16,7 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36' => 'Windows',
     ];
 
-    private $browsers = [
+    private array $browsers = [
         'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko' => 'IE',
         'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25' => 'Safari',
         'Mozilla/5.0 (Windows; U; Win 9x 4.90; SG; rv:1.9.2.4) Gecko/20101104 Netscape/9.1.0285' => 'Netscape',
@@ -34,7 +34,7 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/86.0.180 Chrome/80.0.3987.180 Safari/537.36' => 'Coc Coc',
     ];
 
-    private $robots = [
+    private array $robots = [
         'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' => 'Googlebot',
         'facebookexternalhit/1.1 (+http(s)://www.facebook.com/externalhit_uatext.php)' => 'Facebookexternalhit',
         'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)' => 'Bingbot',
@@ -42,7 +42,7 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)' => 'Yandex',
     ];
 
-    private $mobileDevices = [
+    private array $mobileDevices = [
         'Mozilla/5.0 (iPhone; U; ru; CPU iPhone OS 4_2_1 like Mac OS X; ru) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148a Safari/6533.18.5' => 'iPhone',
         'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25' => 'iPad',
         'Mozilla/5.0 (Linux; U; Android 2.3.4; fr-fr; HTC Desire Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1' => 'HTC',
@@ -51,11 +51,11 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; ASUS Transformer Pad TF300T Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30' => 'AsusTablet',
     ];
 
-    private $desktopDevices = [
+    private array $desktopDevices = [
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56' => 'Macintosh',
     ];
 
-    private $browserVersions = [
+    private array $browserVersions = [
         'Mozilla/5.0 (compatible; MSIE 10.6; Windows NT 6.1; Trident/5.0; InfoPath.2; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 2.0.50727) 3gpp-gba UNTRUSTED/1.0' => '10.6',
         'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko' => '11.0',
         'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25' => '6.0',
@@ -71,7 +71,7 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/86.0.180 Chrome/80.0.3987.180 Safari/537.36' => '86.0.180',
     ];
 
-    private $operatingSystemVersions = [
+    private array $operatingSystemVersions = [
         'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko' => '6.3',
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13+ (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2' => '10_6_8',
         'Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko ) Version/5.1 Mobile/9B176 Safari/7534.48.3' => '5_1',
@@ -80,7 +80,7 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (X11; CrOS x86_64 6680.78.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.102 Safari/537.36' => '6680.78.0',
     ];
 
-    private $desktops = [
+    private array $desktops = [
         'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko',
         'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0',
         'Mozilla/5.0 (Windows; U; Win 9x 4.90; SG; rv:1.9.2.4) Gecko/20101104 Netscape/9.1.0285',
@@ -98,7 +98,7 @@ class AgentTest extends TestCase
         'Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1',
     ];
 
-    public function testLanguages()
+    public function testLanguages(): void
     {
         $agent = new Agent();
         $agent->setHttpHeaders([
@@ -108,7 +108,7 @@ class AgentTest extends TestCase
         $this->assertEquals(['nl-nl', 'nl', 'en-us', 'en'], $agent->languages());
     }
 
-    public function testLanguagesSorted()
+    public function testLanguagesSorted(): void
     {
         $agent = new Agent();
         $agent->setHttpHeaders([
@@ -118,7 +118,7 @@ class AgentTest extends TestCase
         $this->assertEquals(['en-us', 'nl', 'en'], $agent->languages());
     }
 
-    public function testOperatingSystems()
+    public function testOperatingSystems(): void
     {
         $agent = new Agent();
 
@@ -134,7 +134,7 @@ class AgentTest extends TestCase
         }
     }
 
-    public function testBrowsers()
+    public function testBrowsers(): void
     {
         $agent = new Agent();
 
@@ -150,7 +150,7 @@ class AgentTest extends TestCase
         }
     }
 
-    public function testRobots()
+    public function testRobots(): void
     {
         $agent = new Agent();
 
@@ -161,23 +161,22 @@ class AgentTest extends TestCase
         }
     }
 
-    public function testRobotShouldReturnFalse()
+    public function testRobotShouldReturnFalse(): void
     {
         $agent = new Agent();
 
         $this->assertFalse($agent->robot());
     }
 
-    /**
-     * @expectedException \BadMethodCallException
-     */
-    public function testCallShouldThrowBadMethodCallException()
+    public function testCallShouldThrowBadMethodCallException(): void
     {
+        $this->expectException(\BadMethodCallException::class);
+
         $agent = new Agent();
         $agent->invalidMethod();
     }
 
-    public function testMobileDevices()
+    public function testMobileDevices(): void
     {
         $agent = new Agent();
 
@@ -194,7 +193,7 @@ class AgentTest extends TestCase
         }
     }
 
-    public function testDesktopDevices()
+    public function testDesktopDevices(): void
     {
         $agent = new Agent();
 
@@ -211,7 +210,7 @@ class AgentTest extends TestCase
         }
     }
 
-    public function testVersions()
+    public function testVersions(): void
     {
         $agent = new Agent();
 
@@ -233,7 +232,7 @@ class AgentTest extends TestCase
         }
     }
 
-    public function testIsMethods()
+    public function testIsMethods(): void
     {
         $agent = new Agent();
 
