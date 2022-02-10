@@ -1,13 +1,14 @@
 Agent
 =====
 
-[![Latest Stable Version](http://img.shields.io/packagist/v/jenssegers/agent.svg)](https://packagist.org/packages/jenssegers/agent) [![Total Downloads](http://img.shields.io/packagist/dm/jenssegers/agent.svg)](https://packagist.org/packages/jenssegers/agent) [![Build Status](http://img.shields.io/travis/jenssegers/agent.svg)](https://travis-ci.org/jenssegers/agent) [![Coverage Status](http://img.shields.io/coveralls/jenssegers/agent.svg)](https://coveralls.io/r/jenssegers/agent) [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/jenssegers)
+[![Latest Stable Version](http://img.shields.io/packagist/v/phattarachai/laravel-mobile-detect.svg)](https://packagist.org/packages/phattarachai/laravel-mobile-detect)
+[![Total Downloads](http://img.shields.io/packagist/dm/phattarachai/laravel-mobile-detect.svg)](https://packagist.org/packages/jenssegers/agent)
 
-A PHP desktop/mobile user agent parser with support for Laravel, based on [Mobile Detect](https://github.com/serbanghita/Mobile-Detect) with desktop support and additional functionality.
+Thanks  https://github.com/jenssegers/agent for the original version.
 
-<p align="center">
-<img src="https://jenssegers.com/static/media/agent.png" height="275">
-</p>
+A PHP desktop/mobile user agent parser with support for Laravel, based
+on [Mobile Detect](https://github.com/serbanghita/Mobile-Detect) with desktop support and additional functionality.
+
 
 Installation
 ------------
@@ -15,7 +16,7 @@ Installation
 Install using composer:
 
 ```bash
-composer require jenssegers/agent
+composer require phattarachai/laravel-mobile-detect
 ```
 
 Laravel (optional)
@@ -24,13 +25,13 @@ Laravel (optional)
 Add the service provider in `config/app.php`:
 
 ```php
-Jenssegers\Agent\AgentServiceProvider::class,
+Phattarachai\LaravelMobileDetect\AgentServiceProvider::class,
 ```
 
 And add the Agent alias to `config/app.php`:
 
 ```php
-'Agent' => Jenssegers\Agent\Facades\Agent::class,
+'Agent' => Phattarachai\LaravelMobileDetect\Facades\Agent::class,
 ```
 
 Basic Usage
@@ -39,19 +40,21 @@ Basic Usage
 Start by creating an `Agent` instance (or use the `Agent` Facade if you are using Laravel):
 
 ```php
-use Jenssegers\Agent\Agent;
+use Phattarachai\LaravelMobileDetect\Agent;
 
 $agent = new Agent();
 ```
 
-If you want to parse user agents other than the current request in CLI scripts for example, you can use the `setUserAgent` and `setHttpHeaders` methods:
+If you want to parse user agents other than the current request in CLI scripts for example, you can use
+the `setUserAgent` and `setHttpHeaders` methods:
 
 ```php
 $agent->setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13+ (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2');
 $agent->setHttpHeaders($headers);
 ```
 
-All of the original [Mobile Detect](https://github.com/serbanghita/Mobile-Detect) methods are still available, check out some original examples at https://github.com/serbanghita/Mobile-Detect/wiki/Code-examples
+All of the original [Mobile Detect](https://github.com/serbanghita/Mobile-Detect) methods are still available, check out
+some original examples at https://github.com/serbanghita/Mobile-Detect/wiki/Code-examples
 
 ### Is?
 
@@ -147,7 +150,8 @@ $agent->isPhone();
 
 ### Robot detection
 
-Check if the user is a robot. This uses [jaybizzle/crawler-detect](https://github.com/JayBizzle/Crawler-Detect) to do the actual robot detection.
+Check if the user is a robot. This uses [jaybizzle/crawler-detect](https://github.com/JayBizzle/Crawler-Detect) to do
+the actual robot detection.
 
 ```php
 $agent->isRobot();
@@ -163,7 +167,8 @@ $robot = $agent->robot();
 
 ### Browser/platform version
 
-MobileDetect recently added a `version` method that can get the version number for components. To get the browser or platform version you can use:
+MobileDetect recently added a `version` method that can get the version number for components. To get the browser or
+platform version you can use:
 
 ```php
 $browser = $agent->browser();
@@ -175,10 +180,24 @@ $version = $agent->version($platform);
 
 *Note, the version method is still in beta, so it might not return the correct result.*
 
+## สนับสนุนผู้พัฒนา
+
+🙋‍♂️ สวัสดีครับ ผมอ๊อฟนะครับ เป็น Full Stack Web Developer มีสร้าง package ขึ้นมาใช้งานในโปรเจคตัวเองที่ใช้งานบ่อย ๆ
+ถ้ามีข้อเสนอแนะอยากให้ทำ package อะไรบน PHP / Laravel / NodeJS / Python หรือภาษาอื่น ๆ ทักทายมาได้เลยครับ
+
+line:
+[phat-chai](https://line.me/ti/p/~phat-chai)
+
+💻 รับงาน Freelance หากมีโปรเจคที่น่าสนใจ หาทีมงานร่วมงาน หาโปรแกรมเมอร์ที่มีประสบการณ์ช่วยแก้โจทย์ที่ท้าทาย
+ติดต่อมาได้เลยครับ ยินดีให้ความช่วยเหลือและรอสร้างผลงานที่ดีร่วมกันครับ
+
+📄 เข้ามาดูประวัติและผลงานได้ที่ https://phattarachai.dev
+
+<a href="https://phattarachai.dev">
+    <img src="/art/phattarachai.dev.png" alt="https://phattarachai.dev" width="419px" />
+</a>
+
 ## License
 
 Laravel User Agent is licensed under [The MIT License (MIT)](LICENSE).
 
-## Security contact information
-
-To report a security vulnerability, follow [these steps](https://tidelift.com/security).

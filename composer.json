@@ -1,6 +1,6 @@
 {
-  "name": "jenssegers/agent",
-  "description": "Desktop/mobile user agent parser with support for Laravel, based on Mobiledetect",
+  "name": "phattarachai/laravel-mobile-detect",
+  "description": "Desktop/mobile user agent parser with support for Laravel, based on MobileDetect",
   "keywords": [
     "laravel",
     "useragent",
@@ -11,12 +11,12 @@
     "mobile",
     "desktop"
   ],
-  "homepage": "https://github.com/jenssegers/agent",
+  "homepage": "https://github.com/phattarachai/laravel-moibile-detect",
   "license": "MIT",
   "authors": [
     {
-      "name": "Jens Segers",
-      "homepage": "https://jenssegers.com"
+      "name": "Phattarachai Chaiimongkol",
+      "homepage": "https://phattarachai.dev"
     }
   ],
   "require": {
@@ -30,7 +30,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Jenssegers\\Agent\\": "src/"
+      "Phattarachai\\LaravelMobileDetect\\": "src/"
     }
   },
   "extra": {
@@ -39,10 +39,10 @@
     },
     "laravel": {
       "providers": [
-        "Jenssegers\\Agent\\AgentServiceProvider"
+        "Phattarachai\\LaravelMobileDetect\\AgentServiceProvider"
       ],
       "aliases": {
-        "Agent": "Jenssegers\\Agent\\Facades\\Agent"
+        "Agent": "Phattarachai\\LaravelMobileDetect\\Facades\\Agent"
       }
     }
   },

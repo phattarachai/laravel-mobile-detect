@@ -1,6 +1,6 @@
 <?php
 
-namespace Jenssegers\Agent;
+namespace Phattarachai\LaravelMobileDetect;
 
 use Illuminate\Support\ServiceProvider;
 

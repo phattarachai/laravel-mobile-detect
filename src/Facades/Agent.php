@@ -1,6 +1,6 @@
 <?php
 
-namespace Jenssegers\Agent\Facades;
+namespace Phattarachai\LaravelMobileDetect\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
