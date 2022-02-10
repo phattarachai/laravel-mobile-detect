@@ -4,7 +4,7 @@ Agent
 [![Latest Stable Version](http://img.shields.io/packagist/v/phattarachai/laravel-mobile-detect.svg)](https://packagist.org/packages/phattarachai/laravel-mobile-detect)
 [![Total Downloads](http://img.shields.io/packagist/dm/phattarachai/laravel-mobile-detect.svg)](https://packagist.org/packages/jenssegers/agent)
 
-Thanks  https://github.com/jenssegers/agent for the original version.
+Thanks  [jenssegers/agent](https://github.com/jenssegers/agent) for the original version.
 
 A PHP desktop/mobile user agent parser with support for Laravel, based
 on [Mobile Detect](https://github.com/serbanghita/Mobile-Detect) with desktop support and additional functionality.
