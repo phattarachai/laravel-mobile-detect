@@ -143,6 +143,10 @@ class Agent extends Mobile_Detect
         );
     }
 
+    /**
+     * Get the platforms array.
+     * @return array
+     */
     public static function getPlatforms()
     {
         return static::mergeRules(
@@ -151,6 +155,10 @@ class Agent extends Mobile_Detect
         );
     }
 
+    /**
+     * Get the desktop devices array.
+     * @return array
+     */
     public static function getDesktopDevices()
     {
         return static::$desktopDevices;
