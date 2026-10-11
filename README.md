@@ -1,6 +1,10 @@
 Agent
 =====
 
+> [!CAUTION]
+> **This package is abandoned and no longer maintained.** Use [mobiledetect/mobiledetectlib](https://github.com/serbanghita/Mobile-Detect), the library it wraps, directly instead.
+
+
 [![Latest Stable Version](https://img.shields.io/packagist/v/phattarachai/laravel-mobile-detect.svg)](https://packagist.org/packages/phattarachai/laravel-mobile-detect)
 [![Total Downloads](https://img.shields.io/packagist/dt/phattarachai/laravel-mobile-detect.svg)](https://packagist.org/packages/phattarachai/laravel-mobile-detect)
 

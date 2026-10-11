@@ -1,6 +1,7 @@
 {
   "name": "phattarachai/laravel-mobile-detect",
   "description": "Desktop/mobile user agent parser with support for Laravel, based on MobileDetect",
+  "abandoned": "mobiledetect/mobiledetectlib",
   "keywords": [
     "laravel",
     "useragent",
